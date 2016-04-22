@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./Public/css/style.css" />
+</head>
+<body>
+<!--公用头部-1-START-->
+<div id="theTop">
+    <div class="hisInnerContainer">
+        <a class="collectWord">收藏CSDW</a>
+        <ul class="topestBanner">
+            <li><a>客户服务</a></li>
+            <li><a>网站导航</a></li>
+            <li class="userAction"><a>登陆</a><a>注册</a></li>
+            <li class="lastSpecial"><a>购物车(0)</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--公用头部-1-END-->
+<!--公用头部-2-START-->
+<div id="headerOutterContainer">
+    <div id="header">
+        <a href="" id="headerLogo"></a>
+        <ul class="banner">
+            <li><a href="../Products/index.html">T恤</a></li>
+            <li><a>卫衣</a></li>
+            <li><a>帽子</a></li>
+            <li><a>风衣</a></li>
+            <li><a>服装定制</a></li>
+            <li><a>帮助中心</a></li>
+            <li><a href="../About/about.html">关于我们</a></li>
+            <li class="hasInput"><input type="text" /></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--公用头部-2-END-->
+
+<!--我要下单-START-->
+<div class="takeOrderContainers">
+    <div id="orderContainer">
+        <div class="orderTopBanner">
+            <ul class="fl orderBannerTitle">
+                <li class="takeOrder">我要下单</li>
+                <li class="secondList orderInputIcon">订单输入
+                    <div class="iconsBg iconActive"></div>
+                    <div class="iconsBg iconNormal"></div>
+                </li>
+                <li class="hasNoLeftLine secondList orderInfo active">订单信息
+                    <div class="iconsBg iconActive"></div>
+                    <div class="iconsBg iconNormal"></div>
+                    <div id="newOrderHint"></div>
+                </li>
+            </ul>
+            <a class="fr simpleBts">简约版</a>
+            <div class="clear"></div>
+        </div>
+        <div id="orderForm" class="cartContainer">
+            <div id="cartTable">
+                <div class="cartTitle">
+                    <div class="fl allThingInfo" >全部商品 <strong id="allThingInfo">1</strong> 件</div>
+                    <div class="fr cartInfo">购物车商品提交并支付后才会成为正式订单</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="cartFormTitle">
+                    <div class="cFTGrid kh">款号</div>
+                    <div class="cFTGrid mc">名称</div>
+                    <div class="cFTGrid ys">颜色</div>
+                    <div class="cFTGrid cm">尺码</div>
+                    <div class="cFTGrid ck">仓库</div>
+                    <div class="cFTGrid jgdj">价格等级</div>
+                    <div class="cFTGrid dj">单价</div>
+                    <div class="cFTGrid sl">数量</div>
+                    <div class="cFTGrid je">金额</div>
+                    <div class="cFTGrid cz">操作</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="cartFormBody">
+                    <div class="cfbGrid">
+                        <div class="gridBox kh">
+                            <div class="checkBox">1AA01</div>
+                        </div>
+                        <div class="gridBox mc">特价-190克圆领文化衫</div>
+                        <div class="gridBox ys">023中粉</div>
+                        <div class="gridBox cm">160</div>
+                        <div class="gridBox ck">上海</div>
+                        <div class="gridBox jgdj">B</div>
+                        <div class="gridBox dj">10.3</div>
+                        <div class="gridBox sl">
+                            <div class="nubActionBox">
+                                <a class="actionBtn btnMinus">-</a>
+                                <a class="actionBtn btnPlus">+</a>
+                                <input class="nubChanges" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                       onafterpaste="this.value=this.value.replace(/\D/g,'')" value="1" limit="10" singlePrice="14"  />
+                            </div>
+                        </div>
+                        <div class="gridBox je">2060.00</div>
+                        <div class="gridBox cz"><a class="deleteBtn">删除</a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="cfbGrid">
+                        <div class="gridBox kh">
+                            <div class="checkBox">1AA01</div>
+                        </div>
+                        <div class="gridBox mc">特价-190克圆领文化衫</div>
+                        <div class="gridBox ys">023中粉</div>
+                        <div class="gridBox cm">160</div>
+                        <div class="gridBox ck">上海</div>
+                        <div class="gridBox jgdj">B</div>
+                        <div class="gridBox dj">10.3</div>
+                        <div class="gridBox sl">
+                            <div class="nubActionBox">
+                                <a class="actionBtn btnMinus">-</a>
+                                <a class="actionBtn btnPlus">+</a>
+                                <input class="nubChanges" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                       onafterpaste="this.value=this.value.replace(/\D/g,'')" value="3" limit="100" singlePrice="14"  />
+                            </div>
+                        </div>
+                        <div class="gridBox je">2060.00</div>
+                        <div class="gridBox cz"><a class="deleteBtn">删除</a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="cfbGrid">
+                        <div class="gridBox kh">
+                            <div class="checkBox">1AA01</div>
+                        </div>
+                        <div class="gridBox mc">特价-190克圆领文化衫</div>
+                        <div class="gridBox ys">023中粉</div>
+                        <div class="gridBox cm">160</div>
+                        <div class="gridBox ck">上海</div>
+                        <div class="gridBox jgdj">B</div>
+                        <div class="gridBox dj">10.3</div>
+                        <div class="gridBox sl">
+                            <div class="nubActionBox">
+                                <a class="actionBtn btnMinus">-</a>
+                                <a class="actionBtn btnPlus">+</a>
+                                <input class="nubChanges" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                       onafterpaste="this.value=this.value.replace(/\D/g,'')" value="5" limit="100" singlePrice="14"  />
+                            </div>
+                        </div>
+                        <div class="gridBox je">2060.00</div>
+                        <div class="gridBox cz"><a class="deleteBtn">删除</a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="cfbGrid">
+                        <div class="gridBox kh">
+                            <div class="checkBox">1AA01</div>
+                        </div>
+                        <div class="gridBox mc">特价-190克圆领文化衫</div>
+                        <div class="gridBox ys">023中粉</div>
+                        <div class="gridBox cm">160</div>
+                        <div class="gridBox ck">上海</div>
+                        <div class="gridBox jgdj">B</div>
+                        <div class="gridBox dj">10.3</div>
+                        <div class="gridBox sl">
+                            <div class="nubActionBox">
+                                <a class="actionBtn btnMinus">-</a>
+                                <a class="actionBtn btnPlus">+</a>
+                                <input class="nubChanges" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                       onafterpaste="this.value=this.value.replace(/\D/g,'')" value="7" limit="100" singlePrice="14"  />
+                            </div>
+                        </div>
+                        <div class="gridBox je">2060.00</div>
+                        <div class="gridBox cz"><a class="deleteBtn">删除</a></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div id="settleAccountsContainer">
+                    <div class="allChooseBtn fl activeAllChooseBtn" id="allChooseBtn">全选</div>
+                    <div class="deleteChoose fl" id="deleteChoose">删除选中的商品</div>
+                    <div class="chooseThingsInfo fr">
+                        <span>已选择 <strong id="hasChoosen">1</strong> 件商品</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>总金额 : <strong id="cartTotalPrice">¥2060.0</strong></span>
+                    </div>
+                    <div class="sacBtn hoverLight">去结算</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--提示-START-->
+<div id="msgBox"><div class="bmask"></div>
+    <div class="theMsgBox">
+        <div class="hint">提示
+            <img src="../Public/images/xIcon.jpg" width="17" height="17" alt="" onclick="closeHint()">
+        </div>
+        <div class="hintBox">
+            <img class="hintIcon" src="../Public/images/hintIcon.jpg" width="58" height="50" alt="">
+            <span id="hintWord"></span>
+        </div>
+    </div>
+</div>
+<!--提示-END-->
+
+<!--我要下单-END-->
+
+<!--公用尾部-1-START-->
+<div id="hotLineContainer">
+    <ul class="innerContainer">
+        <li class="sign1 signGrid">
+            <p class="en">Quality</p>
+            <p class="cn">品质保障</p>
+        </li>
+        <li class="sign2 signGrid">
+            <p class="en">lnventory</p>
+            <p class="cn">大量库存</p>
+        </li>
+        <li class="sign3 signGrid">
+            <p class="en">More Sizes</p>
+            <p class="cn">多种尺寸</p>
+        </li>
+        <li class="sign4 signGrid">
+            <p class="en">More Color</p>
+            <p class="cn">多种颜色</p>
+        </li>
+        <li class="sign5 signGrid">
+            <p class="en">Mini.Order</p>
+            <p class="cn">一件起订</p>
+        </li>
+        <li class="hotline">
+            <p>全国服务热线</p>
+            <p class="phoneNub">400-123-1234</p>
+        </li>
+    </ul>
+</div>
+<!--公用尾部-1-END-->
+<!--公用尾部-2-START-->
+<div id="footer">
+    <div class="footerUpContainer">
+        <div class="innerContainer">
+            <ul class="bottomBanner fl">
+                <li></li>
+                <li class="firstWords"><a>公司介绍</a></li>
+                <li><a>网络地图</a></li>
+                <li><a>使用指南</a></li>
+                <li><a>支付方式</a></li>
+            </ul>
+            <div class="soicalBts fr">
+                <a class="weiboSign"></a><a class="wechatSign"></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="footerBottomContainer">
+        <div class="fl">
+            <p>上海市普陀区金沙江路</p>
+            <p style="margin-top:11px;">Copyright©2005-2014 版权所有,并保留所有权利</p>
+        </div>
+        <div class="fr"><br /><br /><p>品牌网站建设: <strong>GOODBLANK</strong></p></div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--公用尾部-1-END-->
+</body>
+<script src="../Public/js/jquery-1.9.1.min.js"></script>
+<script>
+
+
+(function($){
+
+    jQuery.fn.chooseTd = function(options){
+
+        var $cartTotalPrice = $('#cartTotalPrice');
+        var $hasChoosen = $('#hasChoosen');
+        var $allChooseBtn = $('#allChooseBtn');
+        var $deleteChoose = $('#deleteChoose');
+        var $allThingInfo = $('#allThingInfo');
+
+        return this.each(function(){
+
+            var $this = $(this);
+
+            var $btnMinus = $this.find('.btnMinus');
+
+            var $btnPlus = $this.find('.btnPlus');
+
+            var $input = $this.find('.nubChanges');
+
+            var $singlePrice = parseFloat($input.attr('singleprice'));
+
+            var $je = $this.find('.je');
+
+            var $kh = $this.find('.kh');
+            
+            var $deleteBtn = $(this).find('.deleteBtn');
+
+            $this.addClass('active');
+
+            $kh.on('click',function(e){
+                $this.toggleClass('active');
+                if(!$this.hasClass('active')){
+                    $allChooseBtn.removeClass('activeAllChooseBtn');
+                }
+                getAllMoney();
+            });
+
+            $je.text(($singlePrice*parseFloat($input.val())).toFixed(1));
+
+            $btnMinus.on('click',function(){
+
+                var value = parseInt($input.val());
+
+                if(value==1){
+                    $input.val('1');
+                    alertFunc('商品数量不能小于0');
+                }else{
+                    value = value - 1;    
+                    value = chk(value);
+                    $input.val(value);  
+                }
+
+                var sl = $input.val();
+                var price = $singlePrice * sl;
+                $je.text(price.toFixed(1));
+                getAllMoney();
+                
+            });
+
+            $input.on('blur',function(){
+                var limit = parseInt($(this).attr('limit'));
+                if($(this).val()=='0'){
+                    $(this).val('1');
+                }else if($(this).val()>limit){
+                    alertFunc('商品数量超限');
+                    $(this).val(limit);
+                }
+                getSingleMoney($(this));
+                getAllMoney();
+            });
+
+            $btnPlus.on('click',function(){
+                var theLimit = parseInt($input.attr('limit'));
+                var theValue = parseInt($input.val());
+                if(theValue<theLimit){
+                    $input.val(theValue+1);
+                }else{
+                    $input.val(theLimit);
+                    alertFunc('商品数量超限');
+                }
+
+                var sl = $input.val();
+                var price = $singlePrice * sl;
+                $je.text(price.toFixed(1));
+                getAllMoney();
+            });
+
+            $deleteChoose.on('click',function(){
+                $('.cfbGrid').each(function(){
+                    if($(this).hasClass('active')){
+                        $(this).remove();
+                    }
+                });
+                getAllMoney();
+            });
+
+            $deleteBtn.on('click',function(){
+                $this.remove();
+                getAllMoney();
+            });            
+
+            var getSingleMoney = function(obj){
+
+                var theprice = parseFloat($(obj).attr('singleprice'));
+                var nubs = parseInt($(obj).val());
+                $(obj).parents('.sl').next('.je').text((theprice*nubs).toFixed(1));
+
+            }
+
+            var alertFunc = function(str){
+                $('#msgBox').css('display','block');
+                $('#hintWord').text(str);
+            }
+
+            var chk = function(val){
+                val = val.toString();
+
+                val = val.replace(/\D/g,'');
+
+                return val;
+            }
+
+            var getAllMoney = function(){
+                var price = 0;
+                var index = 0;
+                $('.cfbGrid').each(function(){
+                    if($(this).hasClass('active')){
+                        index++;
+                        price = price + parseFloat($(this).find('.je').text());       
+                    }
+                })
+                $cartTotalPrice.text('￥'+price.toFixed(1));                
+                $hasChoosen.text(index);
+                $allThingInfo.text(index);
+            }
+
+        });        
+    }
+
+})(jQuery);
+
+$('.cfbGrid').chooseTd();
+var initMoney = function(){
+    var price = 0;
+    var index = 0;
+    $('.cfbGrid').each(function(){
+        if($(this).hasClass('active')){
+            index++;
+            price = price + parseFloat($(this).find('.je').text());
+        }
+    })
+    $('#cartTotalPrice').text('￥'+price.toFixed(1));
+    $('#hasChoosen').text(index);
+    $('#allThingInfo').text(index);
+}
+initMoney();
+
+
+$('#allChooseBtn').on('click',function(){
+
+    if($(this).hasClass('activeAllChooseBtn')){
+        $('.cfbGrid').removeClass('active');
+        $(this).removeClass('activeAllChooseBtn');
+    }else{
+        $('.cfbGrid').addClass('active');
+        $(this).addClass('activeAllChooseBtn');
+    }
+
+    initMoney();
+
+});
+
+
+function closeHint(){
+    $('#msgBox').css('display','none');
+}
+</script>
+</html>
