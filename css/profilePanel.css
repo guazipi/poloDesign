@@ -26,59 +26,59 @@
     -webkit-box-shadow: inset 0 1px 0 #c1e6ff;
 }
 
-.fabricProfile {
+#fabricProfile {
     min-height: 640px;
     width: 1080px;
     overflow:hidden;
 }
 
-.fabricProfile .content-area {
+#fabricProfile .content-area {
     padding-left: 10px;
     margin-top: 20px;
 }
 
-.fabricProfile .content-area .previews {
+#fabricProfile .content-area .previews {
     width: 100px;
     position: relative;
     margin-right: 12px;
     float: left;
 }
 
-.fabricProfile .content-area .previews .preview {
+#fabricProfile .content-area .previews .preview {
     float: left;
     width: 100px;
     text-align: center;
     border-left: none;
     cursor: pointer;
     margin-right: 7px;
-    border: 1px solid .e1e1e1;
+    border: 1px solid #e1e1e1;
     margin-bottom: 12px;
 }
 
-.fabricProfile .content-area .previews .preview:hover {
+#fabricProfile .content-area .previews .preview:hover {
     opacity: 0.8;
     filter: alpha(opacity=80);
 }
 
-.fabricProfile .content-area .previews .preview.normal {
+#fabricProfile .content-area .previews .preview.normal {
     border-left: 1px solid #dfdfdf;
 }
 
-.fabricProfile .content-area .previews .preview.sample {
+#fabricProfile .content-area .previews .preview.sample {
     text-align: right;
     background: #9f9ea3;
 }
 
-.fabricProfile .content-area .previews .preview.sample2 {
+#fabricProfile .content-area .previews .preview.sample2 {
     text-align: right;
     background: #9f9ea3;
 }
 
-.fabricProfile .content-area .previews .preview img {
+#fabricProfile .content-area .previews .preview img {
     height: 100px;
 }
 
-.fabricProfile .content-area .panel {
+#fabricProfile .content-area .panel {
     width: 600px;
     overflow: hidden;
     margin: auto;
@@ -87,48 +87,48 @@
     float: left;
 }
 
-.fabricProfile .content-area .panel .images {
+#fabricProfile .content-area .panel .images {
     width: 3500px;
     height: 600px;
     overflow: hidden;
     position: relative;
 }
 
-.fabricProfile .content-area .panel .images .image {
+#fabricProfile .content-area .panel .images .image {
     height: 600px;
     float: left;
     width: 600px;
 }
 
-.fabricProfile .content-area .panel .images .image.sample {
+#fabricProfile .content-area .panel .images .image.sample {
     text-align: right;
     background: #9f9ea3;
 }
 
-.fabricProfile .content-area .panel .images .image.sample2 {
+#fabricProfile .content-area .panel .images .image.sample2 {
     text-align: right;
     background: #9f9ea3;
 }
 
-.fabricProfile .content-area .panel .images .image.sample-shirt {
+#fabricProfile .content-area .panel .images .image.sample-shirt {
     text-align: center;
     background: #fff;
-    border: 1px solid .dfdfdf;
+    border: 1px solid #dfdfdf;
     width: 368px;
     height: 368px;
 }
 
-.fabricProfile .content-area .panel .images .image.embed-shirt {
+#fabricProfile .content-area .panel .images .image.embed-shirt {
     text-align: center;
     background: #fff;
-    border: 1px solid .dfdfdf;
+    border: 1px solid #dfdfdf;
     width: 368px;
     height: 368px;
 }
 
-.fabricProfile .content-area .panel .new {
+#fabricProfile .content-area .panel .new {
     position: absolute;
-    background: .000;
+    background: #000;
     opacity: 0.6;
     color: #fff;
     font-size: 14px;
@@ -139,7 +139,7 @@
     z-index: 1000;
 }
 
-.fabricProfile .right-panel {
+#fabricProfile .right-panel {
     float: left;
     width: 330px;
     height: 370px;
@@ -149,45 +149,45 @@
     line-height: 28px;
 }
 
-.fabricProfile .right-panel .full-text .title {
+#fabricProfile .right-panel .full-text .title {
     font-size: 26px;
-    font-weight: bold;
+    font-weight: blod;
     color: #000;
     margin-bottom: 5px;
     line-height: 40px
 }
 
-.fabricProfile .right-panel .full-text .price {
+#fabricProfile .right-panel .full-text .price {
     margin-top: 5px;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 5px;
     line-height: 30px
 }
 
-.fabricProfile .right-panel .full-text .price .root-price {
+#fabricProfile .right-panel .full-text .price .root-price {
 }
 
-.fabricProfile .right-panel .full-text .price .real-price {
+#fabricProfile .right-panel .full-text .price .real-price {
     color: #e74c3c;
     font-weight: bold;
 }
 
-.fabricProfile .right-panel .full-text .price .real-price .free {
+#fabricProfile .right-panel .full-text .price .real-price .free {
     color: #363636;
 }
 
-.fabricProfile .right-panel .full-text .price .real-price .free a {
+#fabricProfile .right-panel .full-text .price .real-price .free a {
     color: #363636;
     font-weight: 300;
     text-decoration: underline;
 }
 
-.fabricProfile .right-panel .full-text .button-area {
+#fabricProfile .right-panel .full-text .button-area {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.fabricProfile .right-panel .full-text .button-area .button-design {
+#fabricProfile .right-panel .full-text .button-area .button-design {
     color: #fff;
     width: 262px;
     height: 52px;
@@ -198,20 +198,20 @@
     line-height: 45px;
 }
 
-.fabricProfile .right-panel .full-text .button-area .close-dialog {
+#fabricProfile .right-panel .full-text .button-area .close-dialog {
     text-decoration: underline;
     color: #111111;
     margin-left: 40px;
 }
 
-.fabricProfile .right-panel .full-text .detail {
+#fabricProfile .right-panel .full-text .detail {
     margin-top: 20px;
     color: #363636;
     border-bottom: 1px solid #d8d8d8;
     padding-bottom: 8px;
 }
 
-.fabricProfile .right-panel .full-text .detail-description {
+#fabricProfile .right-panel .full-text .detail-description {
     color: #363636;
     margin-top: 8px;
 }
