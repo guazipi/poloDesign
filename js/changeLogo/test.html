@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function* step1() {
+        yield 1;
+    }
+    function *step2() {
+        yield step1();
+    }
+    console.log(step2().yield);
+</script>
+
+</body>
+</html>

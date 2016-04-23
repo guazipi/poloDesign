@@ -18,12 +18,16 @@
 }
 
 .polo-container {
-    display: block;
+    /*display: block;*/
     float: left;
-    /*position: relative;*/
     width: 800px;
     min-height: 670px;
-    /*max-height: 1240px;*/
+}
+.model-container{
+    float: left;
+    width: 700px;
+    min-height: 660px;
+    margin-right:100px;
 }
 
 .polo-area {
@@ -246,7 +250,8 @@
 
 .os-button.white {
     background: rgb(239, 239, 239) -moz-linear-gradient(center top, rgb(239, 239, 239), rgb(254, 254, 254)) repeat scroll 0% 0%;
-    color: rgb(54, 54, 54);
+    /*color: rgb(54, 54, 54);*/
+    color: rgb(248, 246, 249);
     border: 1px solid rgb(225, 225, 225);
     box-shadow: 0px 1px 0px rgb(225, 225, 225) inset;
 }
@@ -261,7 +266,8 @@
     font-size: 13pt;
     font-weight: 700;
     border-radius: 5px;
-    background-color: rgb(58, 153, 216);
+    /*background-color: rgb(58, 153, 216);*/
+    background-color: rgb(90, 88, 88);
     color: rgb(255, 255, 255);
 }
 
@@ -357,6 +363,17 @@
     border: 1.5px solid #9B9DA5;
     cursor: pointer;
 }
+.polo-app .polo-right-toolbox .panel-content .logo-canvas {
+     width: 320px;
+     height: 300px;
+ }
+.polo-app .polo-right-toolbox .panel-content .logo-but {
+    width: 110px;
+    height: 35px;
+    line-height:40px;
+    margin-left: 5px;
+}
+
 
 
 

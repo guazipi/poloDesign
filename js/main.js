@@ -126,22 +126,13 @@ $(document).ready(function () {
                 this.style.display = "block";
                 return false;
             });
-        } else {
-            $(".panel-content > div").eq(currentPanel - 1).css({
-                display: "block",
-            });
-            $(".steps div").eq(currentPanel).css({
-                borderRight: "1px solid rgb(215, 215, 215)",
-                borderTop: "1px solid rgb(215, 215, 215)",
-                borderLeft: "1px solid rgb(215, 215, 215)",
-                borderBottom: "1px solid rgb(215, 215, 215)",
-            });
-            $(".steps div").eq(currentPanel - 1).css({
-                borderRight: "1px solid rgb(255, 255, 255)",
-                borderTop: "2px solid rgb(6, 243, 13)",
-                borderLeft: "2px solid rgb(6, 243, 13)",
-                borderBottom: "2px solid rgb(6, 243, 13)",
-            });
+        } else if(currentPanel == totalPanel-1){
+            $(".model-container").fadeOut();
+            $(".polo-container").fadeIn();
+
+            changeStatsOnStepsPanelPre(currentPanel);
+        }else {
+            changeStatsOnStepsPanelPre(currentPanel);
         }
     });
     $("#nextStep").bind("click", function () {
@@ -154,30 +145,62 @@ $(document).ready(function () {
             }
         });
         if (currentPanel == totalPanel - 1) {
-            alert("最后了,需要自定义logo了");
-            $("#nextStep > span").each(function(){
-                this.innerHTML="";
-                this.innerHTML="自定义?";
+            alert("恭喜你,需要保存购物车了！");
+            $(".panel-content > div").eq(totalPanel-1).css({
+                display:"block",
+            });
+            $("#nextStep > span").each(function () {
+                this.innerHTML = "";
+                this.innerHTML = "done@!";
                 return false;
             })
+        } else if (currentPanel == totalPanel - 2) {
+            $(".polo-container").fadeOut();
+            $(".model-container").fadeIn();
 
-            //下一步需要进行自定义logo了
+            changeStatsOnStepsPanelNext(currentPanel);
+        } else if (typeof(currentPanel) == "undefined") {
+            alert("未定义");
         } else {
-            $(".panel-content > div").eq(currentPanel + 1).css({
-                display: "block",
-            });
-            $(".steps div").eq(currentPanel).css({
-                borderRight: "2px solid rgb(6, 243, 13)",
-                borderTop: "1px solid rgb(6, 243, 13)",
-                borderLeft: "2px solid rgb(6, 243, 13)",
-                borderBottom: "1px solid rgb(6, 243, 13)",
-            });
-            $(".steps div").eq(currentPanel + 1).css({
-                borderRight: "1px solid rgb(255, 255, 255)",
-                borderTop: "2px solid rgb(6, 243, 13)",
-                borderLeft: "2px solid rgb(6, 243, 13)",
-                borderBottom: "2px solid rgb(6, 243, 13)",
-            });
+            changeStatsOnStepsPanelNext(currentPanel);
         }
     });
+
+
+    init();
 });
+
+function changeStatsOnStepsPanelPre(currentPanel){
+    $(".panel-content > div").eq(currentPanel - 1).css({
+        display: "block",
+    });
+    $(".steps div").eq(currentPanel).css({
+        borderRight: "1px solid rgb(215, 215, 215)",
+        borderTop: "1px solid rgb(215, 215, 215)",
+        borderLeft: "1px solid rgb(215, 215, 215)",
+        borderBottom: "1px solid rgb(215, 215, 215)",
+    });
+    $(".steps div").eq(currentPanel - 1).css({
+        borderRight: "1px solid rgb(255, 255, 255)",
+        borderTop: "2px solid rgb(6, 243, 13)",
+        borderLeft: "2px solid rgb(6, 243, 13)",
+        borderBottom: "2px solid rgb(6, 243, 13)",
+    });
+}
+function changeStatsOnStepsPanelNext(currentPanel){
+    $(".panel-content > div").eq(currentPanel + 1).css({
+        display: "block",
+    });
+    $(".steps div").eq(currentPanel).css({
+        borderRight: "2px solid rgb(6, 243, 13)",
+        borderTop: "1px solid rgb(6, 243, 13)",
+        borderLeft: "2px solid rgb(6, 243, 13)",
+        borderBottom: "1px solid rgb(6, 243, 13)",
+    });
+    $(".steps div").eq(currentPanel + 1).css({
+        borderRight: "1px solid rgb(255, 255, 255)",
+        borderTop: "2px solid rgb(6, 243, 13)",
+        borderLeft: "2px solid rgb(6, 243, 13)",
+        borderBottom: "2px solid rgb(6, 243, 13)",
+    });
+}
