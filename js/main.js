@@ -126,17 +126,6 @@ $(document).ready(function () {
                 this.style.display = "block";
                 return false;
             });
-            alert("最开始了");
-            //do {
-            //    $(".steps div").eq(temp).css({
-            //        borderRight: "2px solid rgb(6, 243, 13)",
-            //        borderTop: "1px solid rgb(6, 243, 13)",
-            //        borderLeft: "2px solid rgb(6, 243, 13)",
-            //        borderBottom: "1px solid rgb(6, 243, 13)",
-            //    });
-            //    temp -= 1;
-            //} while (temp >=0);
-            //下一步需要进行自定义logo了
         } else {
             $(".panel-content > div").eq(currentPanel - 1).css({
                 display: "block",
@@ -165,16 +154,13 @@ $(document).ready(function () {
             }
         });
         if (currentPanel == totalPanel - 1) {
-            alert("最后了");
-            //do {
-            //    $(".steps div").eq(temp).css({
-            //        borderRight: "2px solid rgb(6, 243, 13)",
-            //        borderTop: "1px solid rgb(6, 243, 13)",
-            //        borderLeft: "2px solid rgb(6, 243, 13)",
-            //        borderBottom: "1px solid rgb(6, 243, 13)",
-            //    });
-            //    temp -= 1;
-            //} while (temp >=0);
+            alert("最后了,需要自定义logo了");
+            $("#nextStep > span").each(function(){
+                this.innerHTML="";
+                this.innerHTML="自定义?";
+                return false;
+            })
+
             //下一步需要进行自定义logo了
         } else {
             $(".panel-content > div").eq(currentPanel + 1).css({
