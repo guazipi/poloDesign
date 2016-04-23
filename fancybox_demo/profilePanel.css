@@ -1,0 +1,226 @@
+.os-button {
+    display: inline-block;
+    height: 55px;
+    line-height: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    font-size: 13pt;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: #3a99d8;
+    color: #fff;
+    font-style: normal;
+    cursor: pointer;
+}
+.os-button.blue {
+    background: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0,#3a99d8),color-stop(100%,#3a99d8));
+    background: -webkit-linear-gradient(top,#3a99d8,#3a99d8);
+    background: -moz-linear-gradient(top,#3a99d8,#3a99d8);
+    background: -o-linear-gradient(top,#00b5e5,#008db2);
+    background: linear-gradient(top,#3a99d8,#3a99d8);
+    background-color: #3a99d8;
+    color: #fff;
+    border: 1px solid #267db7;
+    box-shadow: inset 0 1px 0 #c1e6ff;
+    -webkit-box-shadow: inset 0 1px 0 #c1e6ff;
+}
+
+#fabricProfile {
+    /*position: absolute;*/
+    /*background-color: #fff;*/
+    min-height: 640px;
+    width: 1080px;
+    /*!*margin: 0 auto;*!*/
+    /*border-radius: 5px;*/
+    /*border: 1px solid #959595;*/
+    /*z-index: 1010;*/
+    /*top: 180px;*/
+    /*left: 100px;*/
+    /*display:none;*/
+    overflow:hidden;
+}
+
+#fabricProfile .content-area {
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+#fabricProfile .content-area .previews {
+    width: 100px;
+    position: relative;
+    margin-right: 12px;
+    float: left;
+}
+
+#fabricProfile .content-area .previews .preview {
+    float: left;
+    width: 100px;
+    text-align: center;
+    border-left: none;
+    cursor: pointer;
+    margin-right: 7px;
+    border: 1px solid #e1e1e1;
+    margin-bottom: 12px;
+}
+
+#fabricProfile .content-area .previews .preview:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+#fabricProfile .content-area .previews .preview.normal {
+    border-left: 1px solid #dfdfdf;
+}
+
+#fabricProfile .content-area .previews .preview.sample {
+    text-align: right;
+    background: #9f9ea3;
+}
+
+#fabricProfile .content-area .previews .preview.sample2 {
+    text-align: right;
+    background: #9f9ea3;
+}
+
+#fabricProfile .content-area .previews .preview img {
+    height: 100px;
+}
+
+#fabricProfile .content-area .panel {
+    width: 600px;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    float: left;
+}
+
+#fabricProfile .content-area .panel .images {
+    width: 3500px;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+#fabricProfile .content-area .panel .images .image {
+    height: 600px;
+    float: left;
+    width: 600px;
+}
+
+#fabricProfile .content-area .panel .images .image.sample {
+    text-align: right;
+    background: #9f9ea3;
+}
+
+#fabricProfile .content-area .panel .images .image.sample2 {
+    text-align: right;
+    background: #9f9ea3;
+}
+
+#fabricProfile .content-area .panel .images .image.sample-shirt {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    width: 368px;
+    height: 368px;
+}
+
+#fabricProfile .content-area .panel .images .image.embed-shirt {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    width: 368px;
+    height: 368px;
+}
+
+#fabricProfile .content-area .panel .new {
+    position: absolute;
+    background: #000;
+    opacity: 0.6;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    right: 10px;
+    top: 10px;
+    z-index: 1000;
+}
+
+#fabricProfile .right-panel {
+    float: left;
+    width: 330px;
+    height: 370px;
+    margin-left: 20px;
+    position: relative;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+#fabricProfile .right-panel .full-text .title {
+    font-size: 26px;
+    font-weight: blod;
+    color: #000;
+    margin-bottom: 5px;
+    line-height: 40px
+}
+
+#fabricProfile .right-panel .full-text .price {
+    margin-top: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    line-height: 30px
+}
+
+#fabricProfile .right-panel .full-text .price .root-price {
+}
+
+#fabricProfile .right-panel .full-text .price .real-price {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+#fabricProfile .right-panel .full-text .price .real-price .free {
+    color: #363636;
+}
+
+#fabricProfile .right-panel .full-text .price .real-price .free a {
+    color: #363636;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+#fabricProfile .right-panel .full-text .button-area {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#fabricProfile .right-panel .full-text .button-area .button-design {
+    color: #fff;
+    width: 262px;
+    height: 52px;
+    font-size: 18px;
+    font-weight: 300;
+    width: 120px;
+    height: 45px;
+    line-height: 45px;
+}
+
+#fabricProfile .right-panel .full-text .button-area .close-dialog {
+    text-decoration: underline;
+    color: #111111;
+    margin-left: 40px;
+}
+
+#fabricProfile .right-panel .full-text .detail {
+    margin-top: 20px;
+    color: #363636;
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 8px;
+}
+
+#fabricProfile .right-panel .full-text .detail-description {
+    color: #363636;
+    margin-top: 8px;
+}

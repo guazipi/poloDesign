@@ -116,6 +116,18 @@
 
 .polo-gallery .gallery-body .cell {
     float: left;
+    transition: 0.2s linear;
+    -webkit-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+}
+.polo-gallery .gallery-body .cell:hover {
+    transform:  scale(1.2);
+    -ms-transform:  scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform:  scale(1.2);
+    -moz-transform:scale(1.2);
 }
 
 .polo-gallery .gallery-body .cell img {
@@ -126,6 +138,8 @@
     margin-right: 10px;
     border-radius: 5px;
     cursor: pointer;
+
+
 }
 
 .right-area {
@@ -336,7 +350,7 @@
     margin-right: 15px;
     margin-top: 4px;
     margin-bottom: 5px;
-    border: 2px solid #9B9DA5;
+    border: 1.5px solid #9B9DA5;
     cursor: pointer;
 }
 
