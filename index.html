@@ -90,31 +90,31 @@
 
             <div class="steps">
                 <div original-title="Pick fabric" class="step base act current" name="base">
-                    <a>领子</a>
+                    领子
                 </div>
                 <div original-title="Short Sleeve or Long Sleeve" class="step sleeve" name="sleeve">
                     袖子
                 </div>
                 <div original-title="Pick fabric" class="step" name="base">
-                    <a>面料</a>
+                    面料
                 </div>
                 <div original-title="Short Sleeve or Long Sleeve" class="step sleeve" name="sleeve">
                     口袋
                 </div>
                 <div original-title="Pick fabric" class="step " name="base">
-                    <a>扣子</a>
+                    扣子
                 </div>
                 <div original-title="Short Sleeve or Long Sleeve" class="step sleeve" name="sleeve">
                     开叉
                 </div>
                 <div original-title="Pick fabric" class="step" name="base">
-                    <a>其他</a>
+                    其他
                 </div>
                 <div original-title="Short Sleeve or Long Sleeve" class="step sleeve" name="sleeve">
                     其他
                 </div>
                 <div original-title="Pick fabric" class="step" name="base">
-                    <a>其他</a>
+                    其他
                 </div>
                 <div original-title="Short Sleeve or Long Sleeve" class="step sleeve" name="sleeve">
                     其他
@@ -202,14 +202,50 @@
                                  style="background: transparent url('./images/colorSet.jpg') no-repeat scroll left -6580px;"></div>
                         </div>
                     </div>
+                    <div class="custom-sleeve" style="display:none">
+                        <div class="title-area">袖型</div>
+                        <div class="sleeve-shape">
+                            <div style="background-image: url('./images/sleeve/long_sleeve.jpg');background-size:cover;"
+                                 class="each-part">
+                                <img src="./images/tick.png">
+                            </div>
+                            <div style="background-image: url('./images/sleeve/short_sleeve.jpg');background-size:cover"
+                                 class="each-part"></div>
+                            <div style="background-image: url('./images/sleeve/seven_sleeve.jpg');background-size:cover;"
+                                 class="each-part"></div>
+                        </div>
+                        <div class="title-area">颜色</div>
+                        <div class="sleeve-collor">
+                            <div class="each-part"
+                                 style="background: transparent url('./images/colorSet.jpg') no-repeat scroll left -7420px;">
+                                <img src="./images/tick.png">
+                            </div>
+                            <div class="each-part"
+                                 style="background: transparent url('./images/colorSet.jpg') no-repeat scroll left -7560px;"></div>
+                            <div class="each-part"
+                                 style="background: transparent url('./images/colorSet.jpg') no-repeat scroll left -7000px;"></div>
+                            <div class="each-part"
+                                 style="background: transparent url('./images/colorSet.jpg') no-repeat scroll left -7700px;"></div>
+                            <div class="each-part"
+                                 style="background: transparent url('./images/colorSet.jpg') no-repeat scroll left -7980px;"></div>
+                            <div class="each-part"
+                                 style="background: transparent url('./images/colorSet.jpg') no-repeat scroll left -12040px;"></div>
+                            <div class="each-part"
+                                 style="background: transparent url('./images/colorSet.jpg') no-repeat scroll left -13020px;"></div>
+                            <div class="each-part"
+                                 style="background: transparent url('./images/colorSet.jpg') no-repeat scroll left -8120px;"></div>
+                            <div class="each-part"
+                                 style="background: transparent url('./images/colorSet.jpg') no-repeat scroll left -6580px;"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="pre-next">
-                    <a class="os-button white prev">
+                    <a id="preStep" class="os-button white prev" href="#">
                         <span class="img"></span>
                         <span class="text">前一步</span>
                     </a>
-                    <a class="os-button white next" data-done="Done" data-next="Next">
+                    <a id="nextStep" class="os-button white next" data-done="Done" data-next="Next" href="#">
                         <span class="text">下一步</span>
                         <span class="img"></span>
                     </a>
