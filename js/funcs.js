@@ -21,24 +21,28 @@ function showShirtInApp(styleName) {
             $.each(divArr, function (key, val) {
                 poloReal.appendChild(val);
             })
+            poloReal.setAttribute("styleType","huanghei");
             break;
         case "huanglan":
             var divArr = getHtmlFromStyleName("huanglan/hl")
             $.each(divArr, function (key, val) {
                 poloReal.appendChild(val);
             })
+            poloReal.setAttribute("styleType","huanglan");
             break;
         case "huise":
             var divArr = getHtmlFromStyleName("huise/hs")
             $.each(divArr, function (key, val) {
                 poloReal.appendChild(val);
             })
+            poloReal.setAttribute("styleType","huise");
             break;
         case "lanhei":
             var divArr = getHtmlFromStyleName("lanhei/lanhei")
             $.each(divArr, function (key, val) {
                 poloReal.appendChild(val);
             })
+            poloReal.setAttribute("styleType","lanhei");
             break;
     }
 }

@@ -47,6 +47,7 @@ $(document).ready(function () {
         })
     });
 
+    //点击collor-shape中的选择项时，添加一个选中的样式
     $(".collar-shape div").each(function () {
         this.onclick = function () {
             if (!this.querySelector("div img")) {
@@ -59,6 +60,8 @@ $(document).ready(function () {
             }
         }
     });
+
+    //点击collor-collor中的选择项时，添加一个选中的样式
     $(".collar-collor div").each(function () {
         this.onclick = function () {
             if (!this.querySelector("div img")) {
@@ -71,15 +74,36 @@ $(document).ready(function () {
             }
         }
     });
+    //点击sleeve-shape中的选择项时，添加一个选中的样式
+    $(".sleeve-shape div").each(function () {
+        this.onclick = function () {
+            if (!this.querySelector("div img")) {
+                $(".sleeve-shape div").each(function () {
+                    this.innerHTML = "";
+                });
+                var img = document.createElement("img");
+                img.src = "./images/tick.png";
+                this.appendChild(img);
+            }
+        }
+    });
+
+    //点击sleeve-collor中的选择项时，添加一个选中的样式
+    $(".sleeve-collor div").each(function () {
+        this.onclick = function () {
+            if (!this.querySelector("div img")) {
+                $(".sleeve-collor div").each(function () {
+                    this.innerHTML = "";
+                });
+                var img = document.createElement("img");
+                img.src = "./images/tick.png";
+                this.appendChild(img);
+            }
+        }
+    });
 
     $(".steps div").each(function (index) {
         this.onclick = function () {
-            $(".steps div").each(function () {
-                this.style.borderRight = "1px solid rgb(215, 215, 215)";
-                this.style.borderTop = "1px solid rgb(215, 215, 215)";
-                this.style.borderLeft = "1px solid rgb(215, 215, 215)";
-                this.style.borderBottom = "1px solid rgb(215, 215, 215)";
-            })
             var temp = index;
             //steps中点击相应的块，右边相应顺序的panel的display为block，两者的顺序应该的相对应的--start
             $(".panel-content > div").each(function () {
@@ -88,7 +112,26 @@ $(document).ready(function () {
             $(".panel-content > div").eq(temp).css({
                 display: "block",
             });
-            //steps中点击相应的块，右边相应顺序的panel的display为block，两者的顺序应该的相对应的--end
+
+            //点击steps中的按钮时，让其与polo-container和model-container联动起来
+            var totalSteps = $(".steps div").length;
+            if (temp == totalSteps - 1) {
+                $(".polo-container").fadeOut();
+                $(".model-container").fadeIn();
+            } else {
+                if(!$(".polo-container").is(':visible')){
+                    $(".model-container").fadeOut();
+                    $(".polo-container").fadeIn();
+                }
+            }
+
+            //steps中各个按钮点击时，设置其相应的表达样式，边框为亮青色
+            $(".steps div").each(function () {
+                this.style.borderRight = "1px solid rgb(215, 215, 215)";
+                this.style.borderTop = "1px solid rgb(215, 215, 215)";
+                this.style.borderLeft = "1px solid rgb(215, 215, 215)";
+                this.style.borderBottom = "1px solid rgb(215, 215, 215)";
+            })
             $(".steps div").eq(temp).css({
                 borderRight: "1px solid rgb(255, 255, 255)",
                 borderTop: "2px solid rgb(6, 243, 13)",
@@ -126,12 +169,12 @@ $(document).ready(function () {
                 this.style.display = "block";
                 return false;
             });
-        } else if(currentPanel == totalPanel-1){
+        } else if (currentPanel == totalPanel - 1) {
             $(".model-container").fadeOut();
             $(".polo-container").fadeIn();
 
             changeStatsOnStepsPanelPre(currentPanel);
-        }else {
+        } else {
             changeStatsOnStepsPanelPre(currentPanel);
         }
     });
@@ -145,9 +188,11 @@ $(document).ready(function () {
             }
         });
         if (currentPanel == totalPanel - 1) {
+            getAllCustomInfo();
+
             alert("恭喜你,需要保存购物车了！");
-            $(".panel-content > div").eq(totalPanel-1).css({
-                display:"block",
+            $(".panel-content > div").eq(totalPanel - 1).css({
+                display: "block",
             });
             $("#nextStep > span").each(function () {
                 this.innerHTML = "";
@@ -170,7 +215,54 @@ $(document).ready(function () {
     init();
 });
 
-function changeStatsOnStepsPanelPre(currentPanel){
+function getAllCustomInfo(){
+    var customInfo={};
+    var poloReal = document.getElementsByClassName("polo-real")[0];
+    var styleType=poloReal.getAttribute("styleType");
+    customInfo.styleType=styleType;
+
+    $(".collar-shape > div").each(function(){
+        if (this.querySelector("div img")) {
+            customInfo.collarShape=this.getAttribute("collarShape");
+            return false;
+        }
+    })
+    $(".collar-collor div").each(function(){
+        if (this.querySelector("div img")) {
+            customInfo.collarCollor=this.getAttribute("collarCollor");
+            return false;
+        }
+    })
+    $(".sleeve-shape > div").each(function(){
+        if (this.querySelector("div img")) {
+            customInfo.sleeveShape=this.getAttribute("sleeveShape");
+            return false;
+        }
+    })
+    $(".sleeve-collor > div").each(function(){
+        if (this.querySelector("div img")) {
+            customInfo.sleeveCollor=this.getAttribute("sleeveCollor");
+            return false;
+        }
+    })
+    $(".fabric-type > div").each(function(){
+        if (this.querySelector("div img")) {
+            customInfo.fabricType=this.getAttribute("fabricType");
+            return false;
+        }
+    })
+    alert("Well Done！您定制的信息：\n"+"衣服款式："+customInfo.styleType+"\n"+
+        "领型："+customInfo.collarShape+"\n"+
+        "领子颜色："+customInfo.collarCollor+"\n"+
+        "袖型："+customInfo.sleeveShape+"\n"+
+        "袖子颜色："+customInfo.sleeveCollor+"\n"+
+        "面料："+customInfo.fabricType+"\n"+
+        "自定义logo："+"\n");
+}
+
+
+
+function changeStatsOnStepsPanelPre(currentPanel) {
     $(".panel-content > div").eq(currentPanel - 1).css({
         display: "block",
     });
@@ -187,7 +279,7 @@ function changeStatsOnStepsPanelPre(currentPanel){
         borderBottom: "2px solid rgb(6, 243, 13)",
     });
 }
-function changeStatsOnStepsPanelNext(currentPanel){
+function changeStatsOnStepsPanelNext(currentPanel) {
     $(".panel-content > div").eq(currentPanel + 1).css({
         display: "block",
     });
