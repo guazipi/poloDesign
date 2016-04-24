@@ -3,7 +3,7 @@
  */
 var app = {};
 function init() {
-    var lingkouMesh, lingkou, geo, uvarr;
+    var lingkou, geo, uvarr;
     //var logo = THREE.ImageUtils.loadTexture("model/logo.png");
     var logo = THREE.ImageUtils.loadTexture("./js/changeLogo/laozi1.jpg");
     var logo1 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/logo1.png");
@@ -85,7 +85,7 @@ function init() {
     objLoader.load("./js/changeLogo/model/lingzi.obj", "./js/changeLogo/model/lingzi.mtl", function (a) {
         h(a);
         a.traverse(function (a) {
-            a instanceof THREE.Mesh && (a.material.side = THREE.DoubleSide, lingkouMesh = a, lingkou = a.material.map)
+            a instanceof THREE.Mesh && (a.material.side = THREE.DoubleSide, app.lingkouMesh = a, lingkou = a.material.map)
         });
         modelS.add(a)
     });
@@ -182,13 +182,13 @@ function init() {
         app.logoMesh.material.map = logo2
     }
     app.changeLingkou = function () {
-        lingkouMesh.material.map = lingkou
+        app.lingkouMesh.material.map = lingkou
     }
     app.changeLingkou1 = function () {
-        lingkouMesh.material.map = lingkou1
+        app.lingkouMesh.material.map = lingkou1
     }
     app.changeLingkou2 = function () {
-        lingkouMesh.material.map = lingkou2
+        app.lingkouMesh.material.map = lingkou2
     };
 
     initDiy();

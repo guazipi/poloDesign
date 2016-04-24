@@ -188,8 +188,6 @@ $(document).ready(function () {
             }
         });
         if (currentPanel == totalPanel - 1) {
-            getAllCustomInfo();
-
             alert("恭喜你,需要保存购物车了！");
             $(".panel-content > div").eq(totalPanel - 1).css({
                 display: "block",
@@ -200,6 +198,8 @@ $(document).ready(function () {
                 return false;
             })
         } else if (currentPanel == totalPanel - 2) {
+            getAllCustomInfo();
+
             $(".polo-container").fadeOut();
             $(".model-container").fadeIn();
 
@@ -210,7 +210,6 @@ $(document).ready(function () {
             changeStatsOnStepsPanelNext(currentPanel);
         }
     });
-
 
     init();
 });
@@ -251,16 +250,26 @@ function getAllCustomInfo(){
             return false;
         }
     })
+    if(customInfo.collarCollor=="blue"){
+        var lingkou1 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/lingkou1.jpg");
+        app.lingkouMesh.material.map = lingkou1;
+    }else if(customInfo.collarCollor=="purple"){
+        var lingkou2 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/lingkou2.jpg");
+        app.lingkouMesh.material.map = lingkou2;
+    }else{
+        var lingkou3 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/maps/T1_map_color.jpg");
+        app.lingkouMesh.material.map = lingkou3;
+    }
+
+
     alert("Well Done！您定制的信息：\n"+"衣服款式："+customInfo.styleType+"\n"+
         "领型："+customInfo.collarShape+"\n"+
         "领子颜色："+customInfo.collarCollor+"\n"+
         "袖型："+customInfo.sleeveShape+"\n"+
         "袖子颜色："+customInfo.sleeveCollor+"\n"+
         "面料："+customInfo.fabricType+"\n"+
-        "自定义logo："+"\n");
+        "下一步您可以自定义logo了！"+"\n");
 }
-
-
 
 function changeStatsOnStepsPanelPre(currentPanel) {
     $(".panel-content > div").eq(currentPanel - 1).css({
