@@ -72,6 +72,7 @@ function init() {
     scene.add(direcLight);
 
     var modelS = new THREE.Group;
+
     scene.add(modelS);
 
     var objLoader = new THREE.OBJMTLLoader;
@@ -99,6 +100,10 @@ function init() {
         });
         modelS.add(a)
     });
+    //modelS.scale=THREE.Vector3(1,0.5,1);
+    modelS.scale.x = 1;
+    modelS.scale.y = 1.2;
+    modelS.scale.z = 1;
     render();
 
     function render() {

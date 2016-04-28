@@ -101,6 +101,21 @@ $(document).ready(function () {
             }
         }
     });
+    //点击sleeve-collor中的选择项时，添加一个选中的样式
+    $(".fabric-type div").each(function () {
+        this.onclick = function () {
+            if (!this.querySelector("div img")) {
+                $(".fabric-type div").each(function () {
+                    this.innerHTML = "";
+                });
+                var img = document.createElement("img");
+                img.src = "./images/tick.png";
+                this.appendChild(img);
+            }
+        }
+    });
+
+
 
     $(".steps div").each(function (index) {
         this.onclick = function () {
