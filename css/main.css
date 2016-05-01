@@ -249,7 +249,7 @@
 }
 
 .os-button.white {
-    background: rgb(239, 239, 239) -moz-linear-gradient(center top, rgb(239, 239, 239), rgb(254, 254, 254)) repeat scroll 0% 0%;
+    /*background: rgb(239, 239, 239) -moz-linear-gradient(center top, rgb(239, 239, 239), rgb(254, 254, 254)) repeat scroll 0% 0%;*/
     /*color: rgb(54, 54, 54);*/
     color: rgb(248, 246, 249);
     border: 1px solid rgb(225, 225, 225);
@@ -266,9 +266,8 @@
     font-size: 13pt;
     font-weight: 700;
     border-radius: 5px;
-    /*background-color: rgb(58, 153, 216);*/
-    background-color: rgb(90, 88, 88);
-    color: rgb(255, 255, 255);
+    background-color:#5A5858;
+    /*color: rgb(255, 255, 255);*/
 }
 
 .os-button, .os-button2 {

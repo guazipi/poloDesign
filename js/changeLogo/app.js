@@ -29,7 +29,7 @@ function init() {
     //document.body.appendChild(webglRender.domElement);
 
     webglRender.shadowMapEnabled = !0;
-    var scene = new THREE.Scene;
+    var scene = new THREE.Scene();
 
     //var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .1, 1000);
     var camera = new THREE.PerspectiveCamera(45, 1, .1, 1000);
@@ -41,16 +41,7 @@ function init() {
     //camera2.lookAt(new THREE.Vector3(0, 15, 0));
 
     var orbitControls = new THREE.OrbitControls(camera, webglRender.domElement);
-//    var trackballControls = new THREE.TrackballControls(camera);
-//    trackballControls.rotateSpeed = 1.0;
-//    trackballControls.zoomSpeed = 1.0;
-//    trackballControls.panSpeed = 1.0;
-////        trackballControls.noZoom=false;
-////        trackballControls.noPan=false;
-//    trackballControls.staticMoving = true;
 
-
-    //orbitControls.autoRotate = true;
     var clock = new THREE.Clock();
 
     var stats = new Stats();
@@ -111,6 +102,8 @@ function init() {
         var delta = clock.getDelta();
         orbitControls.update(delta);
         //trackballControls.update(delta);
+        //direcLight.position.copy(camera.position);
+        direcLight.position.set(camera.position.x+20,camera.position.y+10,camera.position.z);;
 
         requestAnimationFrame(render);
         webglRender.render(scene, camera);
@@ -270,6 +263,7 @@ function initDiy() {
 
     function getImgUrl() {
         var ImgUrl = hbdiy.download();
+        hbdiy.unlock();
         //window.location.href=ImgUrl;
         app.logoMap = THREE.ImageUtils.loadTexture(ImgUrl);
         app.logoMesh.material.map = app.logoMap;
