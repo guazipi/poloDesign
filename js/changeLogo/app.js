@@ -214,7 +214,7 @@ function initDiy() {
         lineWidth: 1,			// 边框线粗细
         strokeStyle: '#000000',	// 边框线颜色
         fillStyle: '#000000',	// 节点填充颜色
-        nodeStyle: 1,			// 节点样式:1方块,0圆点
+        nodeStyle: 0,			// 节点样式:1方块,0圆点
         scaleAreaSize: 4		// 节点大小
     }
 
@@ -245,15 +245,18 @@ function initDiy() {
     fileInput.onchange = function () {
         //这里判断一下文件长度可以确定用户是否真的选择了文件，如果点了取消则文件长度为0
         if (fileInput.files.length !== 0) {
+            var file=fileInput.files[0];
+            if(!/image\/\w+/.test(file.type)){
+                alert("看清楚，这个需要图片！");
+                return false;
+            }
             var reader = new FileReader();
+            reader.readAsDataURL(fileInput.files[0]);
             reader.onload = function (evt) {
-                //prevDiv.innerHTML = '<img src="' + evt.target.result + '" />';
                 //console.log(evt.target.result);
                 hbdiy.addImage(evt.target.result, evt.target.result, 1);
             }
-            reader.readAsDataURL(fileInput.files[0]);
         }
-        ;
     };
 
     $("#uploadImg").bind("click",function(){
@@ -267,6 +270,10 @@ function initDiy() {
         //window.location.href=ImgUrl;
         app.logoMap = THREE.ImageUtils.loadTexture(ImgUrl);
         app.logoMesh.material.map = app.logoMap;
+        setTimeout(function(){
+            hbdiy.unlock();
+        },100);
+
     }
     document.getElementById("applyToModel").onclick = getImgUrl;
 };

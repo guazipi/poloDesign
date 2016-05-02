@@ -141,6 +141,9 @@
             newCanvas.height=249;
             var newCtx = newCanvas.getContext("2d");
             newCtx.putImageData(imgData,0,0);
+
+            I.unlock();
+
             return newCanvas.toDataURL("image/png");
 
             //ctx.putImageData(imgData,0,0);
