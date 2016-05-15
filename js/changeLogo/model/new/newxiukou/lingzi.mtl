@@ -1,0 +1,35 @@
+newmtl pasted__blinn1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd baise.jpg
+bump T1_map_bump.jpg -bm 0.035
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks T1_map_bump.jpg
+newmtl pasted__blinn2SG
+illum 4
+Kd 0.83 0.83 0.83
+Ka 0.00 0.00 0.00
+Tf 0.26 0.26 0.26
+Ni 1.60
+Ks 1.00 1.00 1.00
+newmtl pasted__blinn3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd lingbiao.jpg
+Ni 1.00
+Ks 0.18 0.18 0.18
+newmtl pasted__pasted__blinn1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd baise.jpg
+bump T1_map_bump.jpg -bm 0.05
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks T1_map_bump.jpg
