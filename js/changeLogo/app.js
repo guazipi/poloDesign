@@ -25,6 +25,8 @@ function init() {
     webglRender.setClearColor(8947848);
     webglRender.shadowMapEnabled = !0;
 
+    app.webglRender=webglRender;
+
     document.getElementById("modelContainer").appendChild(webglRender.domElement);
     //document.body.appendChild(webglRender.domElement);
 
@@ -50,7 +52,7 @@ function init() {
     stats.domElement.style.top = stats.domElement.style.right = "0px";
     stats.domElement.style.display="none";
     //document.body.appendChild(stats.domElement);
-    document.getElementById("modelContainer").appendChild(stats.domElement);
+    //document.getElementById("modelContainer").appendChild(stats.domElement);
 
     scene.add(new THREE.AmbientLight(16777215));
     var direcLight = new THREE.DirectionalLight(16777215, 1.0);
@@ -67,14 +69,28 @@ function init() {
     scene.add(modelS);
 
     var objLoader = new THREE.OBJMTLLoader;
-    objLoader.load("./js/changeLogo/model/yifu_2.obj", "./js/changeLogo/model/yifu_2.mtl", function (a) {
+    //objLoader.load("./js/changeLogo/model/yifu_2.obj", "./js/changeLogo/model/yifu_2.mtl", function (a) {
+    //    h(a);
+    //    a.traverse(function (a) {
+    //        a instanceof THREE.Mesh && (a.material.side = THREE.DoubleSide)
+    //    });
+    //    modelS.add(a)
+    //});
+    objLoader.load("./js/changeLogo/model/new/yishen/yishen.obj", "./js/changeLogo/model/new/yishen/yishen.mtl", function (a) {
         h(a);
         a.traverse(function (a) {
             a instanceof THREE.Mesh && (a.material.side = THREE.DoubleSide)
         });
         modelS.add(a)
     });
-    objLoader.load("./js/changeLogo/model/lingzi.obj", "./js/changeLogo/model/lingzi.mtl", function (a) {
+    //objLoader.load("./js/changeLogo/model/lingzi.obj", "./js/changeLogo/model/lingzi.mtl", function (a) {
+    //    h(a);
+    //    a.traverse(function (a) {
+    //        a instanceof THREE.Mesh && (a.material.side = THREE.DoubleSide, app.lingkouMesh = a, lingkou = a.material.map)
+    //    });
+    //    modelS.add(a)
+    //});
+    objLoader.load("./js/changeLogo/model/new/lingzi/lingzi.obj", "./js/changeLogo/model/new/lingzi/lingzi.mtl", function (a) {
         h(a);
         a.traverse(function (a) {
             a instanceof THREE.Mesh && (a.material.side = THREE.DoubleSide, app.lingkouMesh = a, lingkou = a.material.map)
@@ -89,9 +105,19 @@ function init() {
                 map: logo
             }), app.logoMesh = a, geo = app.logoMesh.geometry, uvarr = geo.faceVertexUvs[0], app.logoMap = a.material.map)
         });
+        app.logoMesh.visible=false;
+        a.position.set(0,15,0.8);
         modelS.add(a)
     });
-    //modelS.scale=THREE.Vector3(1,0.5,1);
+    objLoader.load("./js/changeLogo/model/new/xiukou/xiukou.obj", "./js/changeLogo/model/new/xiukou/xiukou.mtl", function (a) {
+        h(a);
+        a.traverse(function (a) {
+            a instanceof THREE.Mesh && (a.material.side = THREE.DoubleSide,app.xiukouMesh = a)
+        });
+        modelS.add(a)
+    });
+
+    modelS.position.set(0,-20,0);
     modelS.scale.x = 1;
     modelS.scale.y = 1.2;
     modelS.scale.z = 1;

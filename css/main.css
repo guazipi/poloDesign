@@ -315,12 +315,16 @@
 
 /* 前一个和后一个的按钮--end*/
 /* 保存到购物车按钮--start*/
+.right-area .actions{
+    float:left;
+    width:100%;
+}
 .right-area .actions .os-button {
-    min-width: 310px;
+    min-width: 31%;
     margin-left: 20px;
     margin-top: 10px;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: bold;
 }
 
 .right-area .polo-right-toolbox .heading-panel {
@@ -372,7 +376,30 @@
     line-height:40px;
     margin-left: 5px;
 }
+/*****loading***************************/
+.loadingIndicator {
+    display: block;
+    position: absolute;
+    top: 450px;
+    left: 750px;
+    margin-top: -33px;
+    margin-left: -33px;
+    width: 66px;
+    height: 66px;
+    background: url(../Images/ajax-loader.gif) center no-repeat;
+}
 
+#cover {
+    display:none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+}
+/*****loading***************************/
 
 
 

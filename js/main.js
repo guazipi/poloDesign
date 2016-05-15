@@ -215,6 +215,7 @@ $(document).ready(function () {
         } else if (currentPanel == totalPanel - 2) {
             getAllCustomInfo();
 
+            app.logoMesh.visible=true;
             $(".polo-container").fadeOut();
             $(".model-container").fadeIn();
 
@@ -274,6 +275,9 @@ function getAllCustomInfo(){
     }else{
         var lingkou3 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/maps/T1_map_color.jpg");
         app.lingkouMesh.material.map = lingkou3;
+
+        var newxiukou = THREE.ImageUtils.loadTexture("./js/changeLogo/model/new/newxiukou/baise.jpg");
+        app.xiukouMesh.material.map = newxiukou;
     }
 
 
