@@ -131,6 +131,7 @@ $(document).ready(function () {
             //点击steps中的按钮时，让其与polo-container和model-container联动起来
             var totalSteps = $(".steps div").length;
             if (temp == totalSteps - 1) {
+                app.logoMesh.visible=true;
                 $(".polo-container").fadeOut();
                 $(".model-container").fadeIn();
             } else {

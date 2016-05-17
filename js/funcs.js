@@ -26,6 +26,12 @@ function preview(){
         hideOnOverlayClick: !0,
         beforeShow: function () {
             document.getElementById("cover").style.display="block";
+            $(".panel-content > div").each(function (index) {
+                if (this.style.display == "block" && index!==$(".panel-content > div").length-1) {
+                    app.logoMesh.visible=false;
+                    return false;
+                }
+            });
             getAllCustomInfo_sec();
             document.getElementById("f5list").appendChild(app.webglRender.domElement);
         },
