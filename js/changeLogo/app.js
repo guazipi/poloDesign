@@ -9,7 +9,9 @@ function init() {
     var logo1 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/logo1.png");
     var logo2 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/logo2.png");
     var lingkou1 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/lingkou1.jpg");
-    var lingkou2 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/lingkou2.jpg");
+    //var lingkou2 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/lingkou2.jpg");
+    var lingkou2 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/lingkou_new.jpg");
+
 
     var f = !1, g;
     var h = function (a) {
