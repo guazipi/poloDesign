@@ -14,7 +14,7 @@ $("a.various").fancybox({
 });
 $(".each-part").mouseover(function (e) {
     var title = this.getAttribute("tipName");
-    console.log(this);
+
     var left=$(this).offset().left;
     var top=$(this).offset().top;
     $(".tip em").text(title);

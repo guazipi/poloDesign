@@ -115,8 +115,6 @@ $(document).ready(function () {
         }
     });
 
-
-
     $(".steps div").each(function (index) {
         this.onclick = function () {
             var temp = index;
@@ -132,8 +130,9 @@ $(document).ready(function () {
             var totalSteps = $(".steps div").length;
             if (temp == totalSteps - 1) {
                 app.logoMesh.visible=true;
-                $(".polo-container").fadeOut();
                 $(".model-container").fadeIn();
+                $(".polo-container").fadeOut();
+
             } else {
                 if(!$(".polo-container").is(':visible')){
                     $(".model-container").fadeOut();
@@ -228,7 +227,9 @@ $(document).ready(function () {
         }
     });
 
-    init();
+    setTimeout(function(){
+        init();
+    },400)
 });
 
 function getAllCustomInfo(){
