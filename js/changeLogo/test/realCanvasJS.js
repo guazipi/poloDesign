@@ -128,8 +128,10 @@
             a && (a.x = v - a.width + C, q(0), m.hide(), k.preadd(), k.add())
         },
         download: function () {
-            //0 < c.size() && (m.hide(), a = null, p = -1, q(0));
-            var b = g.toDataURL("image/png");
+            var tempA=a;
+            0 < c.size() && (m.hide(), a = null, p = -1, q(0));
+
+            //var b = g.toDataURL("image/png");
             //window.location.href = b
             //return b;
 
@@ -141,6 +143,9 @@
             newCanvas.height=249;
             var newCtx = newCanvas.getContext("2d");
             newCtx.putImageData(imgData,0,0);
+
+            //恢复显示编辑图片大小时所出现在图片周围的黑色线条
+            a=tempA;
 
             return newCanvas.toDataURL("image/png");
 
