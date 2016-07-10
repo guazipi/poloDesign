@@ -54,55 +54,110 @@ function preview() {
         }
     });
 }
+//此函数和main.js中的一个函数重复，此时只是暂时备用吧
 function getAllCustomInfo_sec() {
     var customInfo = {};
     var poloReal = document.getElementsByClassName("polo-real")[0];
     var styleType = poloReal.getAttribute("styleType");
     customInfo.styleType = styleType;
-
-    $(".collar-shape > div").each(function () {
-        if (this.querySelector("div img")) {
-            customInfo.collarShape = this.getAttribute("collarShape");
-            return false;
-        }
-    })
-    $(".collar-collor div").each(function () {
-        if (this.querySelector("div img")) {
-            customInfo.collarCollor = this.getAttribute("collarCollor");
-            return false;
-        }
-    })
-    $(".sleeve-shape > div").each(function () {
-        if (this.querySelector("div img")) {
-            customInfo.sleeveShape = this.getAttribute("sleeveShape");
-            return false;
-        }
-    })
-    $(".sleeve-collor > div").each(function () {
-        if (this.querySelector("div img")) {
-            customInfo.sleeveCollor = this.getAttribute("sleeveCollor");
-            return false;
-        }
-    })
+    /*
+     * fabric-type fabricType tipName
+     * fabric-color fabricCollorName tipName
+     * collar-type collarType tipName
+     * stripe-type stripeShape tipName
+     * topfly-type topflyType tipName
+     * cuff-type cuffType tipName
+     * lowerhem-type lowerhemType tipName
+     * fork-type forkType tipName
+     * braid-type braidType tipName
+     * pocket-type pocketType tipName
+     * penBag-type penBagType tipName
+     * turtle-type turtleType tipName
+     * */
     $(".fabric-type > div").each(function () {
         if (this.querySelector("div img")) {
-            customInfo.fabricType = this.getAttribute("fabricType");
+            customInfo.fabricType = [this.getAttribute("fabricType"), this.getAttribute("tipName")];
             return false;
         }
     })
-    if (customInfo.collarCollor == "white") {
+    $(".fabric-color div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.fabricCollor = [this.getAttribute("fabricCollorName"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".collar-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.collarType = [this.getAttribute("collarType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".stripe-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.stripeShape = [this.getAttribute("stripeType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".topfly-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.topflyType = [this.getAttribute("topflyType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".cuff-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.cuffType = [this.getAttribute("cuffType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".lowerhem-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.lowerhemType = [this.getAttribute("lowerhemType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".fork-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.forkType = [this.getAttribute("forkType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".braid-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.braidType = [this.getAttribute("braidType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".pocket-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.pocketType = [this.getAttribute("pocketType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".penBag-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.penBagType = [this.getAttribute("penBagType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".turtle-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.turtleType = [this.getAttribute("turtleType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+
+
+    if (customInfo.fabricCollor[0] == "blue") {
         var lingkou1 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/lingkou1.jpg");
         app.lingkouMesh.material.map = lingkou1;
-    } else if (customInfo.collarCollor == "orange") {
+    } else if (customInfo.fabricCollor[0] == "purple") {
         var lingkou2 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/lingkou2.jpg");
         app.lingkouMesh.material.map = lingkou2;
     } else {
         var lingkou3 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/maps/T1_map_color.jpg");
         app.lingkouMesh.material.map = lingkou3;
 
-    }
-
-    if (customInfo.sleeveCollor !== "white") {
         var newxiukou = THREE.ImageUtils.loadTexture("./js/changeLogo/model/new/newxiukou/baise.jpg");
         app.xiukouMesh.material.map = newxiukou;
     }

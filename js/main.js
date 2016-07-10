@@ -47,73 +47,34 @@ $(document).ready(function () {
         })
     });
 
-    //点击collor-shape中的选择项时，添加一个选中的样式
-    $(".collar-shape div").each(function () {
-        this.onclick = function () {
-            if (!this.querySelector("div img")) {
-                $(".collar-shape div").each(function () {
-                    this.innerHTML = "";
-                });
-                var img = document.createElement("img");
-                img.src = "./images/tick.png";
-                this.appendChild(img);
+    //注册点选事件，选择某一项就把选中的tick.png加上
+    var tickDivArray = [
+        ".fabric-type div",
+        ".fabric-color div",
+        ".collar-type div",
+        ".stripe-type div",
+        ".topfly-type div",
+        ".cuff-type div",
+        ".lowerhem-type div",
+        ".fork-type div",
+        ".braid-type div",
+        ".pocket-type div",
+        ".penBag-type div",
+        ".turtle-type div"];
+    $.each(tickDivArray,function(key,val){
+        $(val).each(function () {
+            this.onclick = function () {
+                if (!this.querySelector("div img")) {
+                    $(val).each(function () {
+                        this.innerHTML = "";
+                    });
+                    var img = document.createElement("img");
+                    img.src = "./images/tick.png";
+                    this.appendChild(img);
+                }
             }
-        }
-    });
-
-    //点击collor-collor中的选择项时，添加一个选中的样式
-    $(".collar-collor div").each(function () {
-        this.onclick = function () {
-            if (!this.querySelector("div img")) {
-                $(".collar-collor div").each(function () {
-                    this.innerHTML = "";
-                });
-                var img = document.createElement("img");
-                img.src = "./images/tick.png";
-                this.appendChild(img);
-            }
-        }
-    });
-    //点击sleeve-shape中的选择项时，添加一个选中的样式
-    $(".sleeve-shape div").each(function () {
-        this.onclick = function () {
-            if (!this.querySelector("div img")) {
-                $(".sleeve-shape div").each(function () {
-                    this.innerHTML = "";
-                });
-                var img = document.createElement("img");
-                img.src = "./images/tick.png";
-                this.appendChild(img);
-            }
-        }
-    });
-
-    //点击sleeve-collor中的选择项时，添加一个选中的样式
-    $(".sleeve-collor div").each(function () {
-        this.onclick = function () {
-            if (!this.querySelector("div img")) {
-                $(".sleeve-collor div").each(function () {
-                    this.innerHTML = "";
-                });
-                var img = document.createElement("img");
-                img.src = "./images/tick.png";
-                this.appendChild(img);
-            }
-        }
-    });
-    //点击sleeve-collor中的选择项时，添加一个选中的样式
-    $(".fabric-type div").each(function () {
-        this.onclick = function () {
-            if (!this.querySelector("div img")) {
-                $(".fabric-type div").each(function () {
-                    this.innerHTML = "";
-                });
-                var img = document.createElement("img");
-                img.src = "./images/tick.png";
-                this.appendChild(img);
-            }
-        }
-    });
+        });
+    })
 
     $(".steps div").each(function (index) {
         this.onclick = function () {
@@ -129,12 +90,12 @@ $(document).ready(function () {
             //点击steps中的按钮时，让其与polo-container和model-container联动起来
             var totalSteps = $(".steps div").length;
             if (temp == totalSteps - 1) {
-                app.logoMesh.visible=true;
+                app.logoMesh.visible = true;
                 $(".model-container").fadeIn();
                 $(".polo-container").fadeOut();
 
             } else {
-                if(!$(".polo-container").is(':visible')){
+                if (!$(".polo-container").is(':visible')) {
                     $(".model-container").fadeOut();
                     $(".polo-container").fadeIn();
                 }
@@ -215,7 +176,7 @@ $(document).ready(function () {
         } else if (currentPanel == totalPanel - 2) {
             getAllCustomInfo();
 
-            app.logoMesh.visible=true;
+            app.logoMesh.visible = true;
             $(".polo-container").fadeOut();
             $(".model-container").fadeIn();
 
@@ -227,54 +188,111 @@ $(document).ready(function () {
         }
     });
 
-    setTimeout(function(){
+    setTimeout(function () {
         init();
-    },400)
+    }, 400)
 });
 
-function getAllCustomInfo(){
-    var customInfo={};
+function getAllCustomInfo() {
+    var customInfo = {};
     var poloReal = document.getElementsByClassName("polo-real")[0];
-    var styleType=poloReal.getAttribute("styleType");
-    customInfo.styleType=styleType;
+    var styleType = poloReal.getAttribute("styleType");
+    customInfo.styleType = styleType;
+    /*
+     * fabric-type fabricType tipName
+     * fabric-color fabricCollorName tipName
+     * collar-type collarType tipName
+     * stripe-type stripeShape tipName
+     * topfly-type topflyType tipName
+     * cuff-type cuffType tipName
+     * lowerhem-type lowerhemType tipName
+     * fork-type forkType tipName
+     * braid-type braidType tipName
+     * pocket-type pocketType tipName
+     * penBag-type penBagType tipName
+     * turtle-type turtleType tipName
+     * */
+    $(".fabric-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.fabricType = [this.getAttribute("fabricType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".fabric-color div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.fabricCollor = [this.getAttribute("fabricCollorName"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".collar-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.collarType = [this.getAttribute("collarType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".stripe-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.stripeShape = [this.getAttribute("stripeType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".topfly-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.topflyType = [this.getAttribute("topflyType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".cuff-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.cuffType = [this.getAttribute("cuffType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".lowerhem-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.lowerhemType = [this.getAttribute("lowerhemType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".fork-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.forkType = [this.getAttribute("forkType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".braid-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.braidType = [this.getAttribute("braidType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".pocket-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.pocketType = [this.getAttribute("pocketType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".penBag-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.penBagType = [this.getAttribute("penBagType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
+    $(".turtle-type > div").each(function () {
+        if (this.querySelector("div img")) {
+            customInfo.turtleType = [this.getAttribute("turtleType"), this.getAttribute("tipName")];
+            return false;
+        }
+    })
 
-    $(".collar-shape > div").each(function(){
-        if (this.querySelector("div img")) {
-            customInfo.collarShape=this.getAttribute("collarShape");
-            return false;
-        }
-    })
-    $(".collar-collor div").each(function(){
-        if (this.querySelector("div img")) {
-            customInfo.collarCollor=this.getAttribute("collarCollor");
-            return false;
-        }
-    })
-    $(".sleeve-shape > div").each(function(){
-        if (this.querySelector("div img")) {
-            customInfo.sleeveShape=this.getAttribute("sleeveShape");
-            return false;
-        }
-    })
-    $(".sleeve-collor > div").each(function(){
-        if (this.querySelector("div img")) {
-            customInfo.sleeveCollor=this.getAttribute("sleeveCollor");
-            return false;
-        }
-    })
-    $(".fabric-type > div").each(function(){
-        if (this.querySelector("div img")) {
-            customInfo.fabricType=this.getAttribute("fabricType");
-            return false;
-        }
-    })
-    if(customInfo.collarCollor=="blue"){
+
+    if (customInfo.fabricCollor[0] == "blue") {
         var lingkou1 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/lingkou1.jpg");
         app.lingkouMesh.material.map = lingkou1;
-    }else if(customInfo.collarCollor=="purple"){
+    } else if (customInfo.fabricCollor[0] == "purple") {
         var lingkou2 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/lingkou2.jpg");
         app.lingkouMesh.material.map = lingkou2;
-    }else{
+    } else {
         var lingkou3 = THREE.ImageUtils.loadTexture("./js/changeLogo/model/maps/T1_map_color.jpg");
         app.lingkouMesh.material.map = lingkou3;
 
@@ -283,13 +301,20 @@ function getAllCustomInfo(){
     }
 
 
-    alert("Well Done！您定制的信息：\n"+"衣服款式："+customInfo.styleType+"\n"+
-        "领型："+customInfo.collarShape+"\n"+
-        "领子颜色："+customInfo.collarCollor+"\n"+
-        "袖型："+customInfo.sleeveShape+"\n"+
-        "袖子颜色："+customInfo.sleeveCollor+"\n"+
-        "面料："+customInfo.fabricType+"\n"+
-        "下一步您可以自定义logo了！"+"\n");
+    alert("Well Done！您定制的信息：\n" + "衣服款式：" + customInfo.styleType + "\n" +
+        "面料类型：" + customInfo.fabricType[0] + " " + customInfo.fabricType[1] + "\n" +
+        "面料颜色：" + customInfo.fabricCollor[0] + " " + customInfo.fabricCollor[1] + "\n" +
+        "领型：" + customInfo.collarType[0] + " " + customInfo.collarType[1] + "\n" +
+        "条纹：" + customInfo.stripeShape[0] + " " + customInfo.stripeShape[1] + "\n" +
+        "门襟：" + customInfo.topflyType[0] + " " + customInfo.topflyType[1] + "\n" +
+        "袖口：" + customInfo.cuffType[0] + " " + customInfo.cuffType[1] + "\n" +
+        "下摆：" + customInfo.lowerhemType[0] + " " + customInfo.lowerhemType[1] + "\n" +
+        "脚衩：" + customInfo.forkType[0] + " " + customInfo.forkType[1] + "\n" +
+        "织带：" + customInfo.braidType[0] + " " + customInfo.braidType[1] + "\n" +
+        "口袋：" + customInfo.pocketType[0] + " " + customInfo.pocketType[1] + "\n" +
+        "笔袋：" + customInfo.penBagType[0] + " " + customInfo.penBagType[1] + "\n" +
+        "龟背：" + customInfo.turtleType[0] + " " + customInfo.turtleType[1] + "\n" +
+        "下一步您可以自定义logo了！" + "\n");
 }
 
 function changeStatsOnStepsPanelPre(currentPanel) {
