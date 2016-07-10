@@ -291,7 +291,6 @@ function initDiy() {
         fileInput.click();
     })
 
-
     function getImgUrl() {
         var ImgUrl = hbdiy.download();
         hbdiy.unlock();
