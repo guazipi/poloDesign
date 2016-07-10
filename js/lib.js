@@ -714,6 +714,9 @@ CSDWPOLO.preview=function () {
         }
     });
 }
+CSDWPOLO.saveCustomInfo=function(){
+
+}
 //此函数和main.js中的一个函数重复，此时只是暂时备用吧
 CSDWPOLO.getAllCustomInfo_sec=function () {
     var customInfo = {};
