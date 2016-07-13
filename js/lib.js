@@ -126,7 +126,7 @@ CSDWPOLO.init = function () {
                 $(".polo-container").fadeOut();
 
             } else {
-                if (!$(".polo-container").is(':visible')) {
+                if (!$(".polo-container").is(":visible")) {
                     $(".model-container").fadeOut();
                     $(".polo-container").fadeIn();
                 }
@@ -414,7 +414,7 @@ CSDWPOLO.init3DView = function () {
     var scene = new THREE.Scene();
 
     //var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .1, 1000);
-    var camera = new THREE.PerspectiveCamera(45, 1, .1, 1000);
+    var camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
 
     camera.position.set(0, 10, 40);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -441,7 +441,7 @@ CSDWPOLO.init3DView = function () {
     direcLight.shadowMapWidth = direcLight.shadowMapHeight = 4096;
     direcLight.shadowCameraFar = 500;
     direcLight.shadowCameraNear = 10;
-    direcLight.shadowDarkness = .35;
+    direcLight.shadowDarkness = 0.35;
     scene.add(direcLight);
 
     var modelS = new THREE.Group;
@@ -521,8 +521,8 @@ CSDWPOLO.init3DView = function () {
             for (var b = 0; b != uvarr.length; ++b)
                 for (var c = uvarr[b], a = 0; a != c.length; ++a) {
                     var d = c[a];
-                    d.x = 2 * d.x - .5;
-                    d.y = 2 * d.y - .5
+                    d.x = 2 * d.x - 0.5;
+                    d.y = 2 * d.y - 0.5
                 }
             geo.uvsNeedUpdate = !0
         }
@@ -532,34 +532,34 @@ CSDWPOLO.init3DView = function () {
             for (var b = 0; b != uvarr.length; ++b)
                 for (var c = uvarr[b], a = 0; a != c.length; ++a) {
                     var d = c[a];
-                    d.x = (d.x + .5) / 2;
-                    d.y = (d.y + .5) / 2
+                    d.x = (d.x + 0.5) / 2;
+                    d.y = (d.y + 0.5) / 2
                 }
             geo.uvsNeedUpdate = !0
         }
     }
     var nowScale = 1;
     CSDWPOLO.app.smallerModel = function () {
-        nowScale -= .1;
-        .7 > nowScale && (nowScale = .7);
+        nowScale -= 0.1;
+        0.7 > nowScale && (nowScale = 0.7);
         modelS.scale.set(nowScale, nowScale, nowScale)
     }
     CSDWPOLO.app.biggerModel = function () {
-        nowScale += .1;
+        nowScale += 0.1;
         1.2 < nowScale && (nowScale = 1.2);
         modelS.scale.set(nowScale, nowScale, nowScale)
     }
     CSDWPOLO.app.moveLeft = function () {
         if (void 0 != CSDWPOLO.app.logoMesh) {
             for (var b = 0; b != uvarr.length; ++b)
-                for (var c = uvarr[b], a = 0; a != c.length; ++a)c[a].x += .1;
+                for (var c = uvarr[b], a = 0; a != c.length; ++a)c[a].x += 0.1;
             geo.uvsNeedUpdate = !0
         }
     }
     CSDWPOLO.app.moveRight = function () {
         if (void 0 != CSDWPOLO.app.logoMesh) {
             for (var b = 0; b != uvarr.length; ++b)
-                for (var c = uvarr[b], a = 0; a != c.length; ++a)c[a].x -= .1;
+                for (var c = uvarr[b], a = 0; a != c.length; ++a)c[a].x -= 0.1;
             geo.uvsNeedUpdate = !0
         }
     }
@@ -643,11 +643,11 @@ CSDWPOLO.initDIY = function () {
         nodeStyle: config.nodeStyle,
         scaleAreaSize: config.scaleAreaSize,
         debug: config.debug,			// 调试
-        tools: './js/changeLogo/test/images/tools.png'
+        tools: "./js/changeLogo/test/images/tools.png"
     });
     hbdiy.unlock();
 
-    var fileInput = document.getElementById('uploadedFile');
+    var fileInput = document.getElementById("uploadedFile");
     //监听是否有文件被选中
     fileInput.onchange = function () {
         //这里判断一下文件长度可以确定用户是否真的选择了文件，如果点了取消则文件长度为0
