@@ -1,9 +1,9 @@
 /**
  * Created by Administrator on 2016/7/10.
  */
-var CSDWPOLO={};
-CSDWPOLO.app={};
-CSDWPOLO.registerEvents=function(){
+var CSDWPOLO = {};
+CSDWPOLO.app = {};
+CSDWPOLO.registerEvents = function () {
     //注册fancybox的弹出事件----begin
     $("a.various").fancybox({
         autoDimensions: !1,
@@ -20,10 +20,10 @@ CSDWPOLO.registerEvents=function(){
     $(".each-part").mouseover(function (e) {
         var title = this.getAttribute("tipName");
 
-        var left=$(this).offset().left;
-        var top=$(this).offset().top;
+        var left = $(this).offset().left;
+        var top = $(this).offset().top;
         $(".tip em").text(title);
-        $(".tip").css({"left": left+"px","top":top+"px","opacity": 1})
+        $(".tip").css({"left": left + "px", "top": top + "px", "opacity": 1})
     })
     $(".each-part").mouseout(function () {
         $(".tip").css({"opacity": 0});
@@ -89,7 +89,7 @@ CSDWPOLO.registerEvents=function(){
         ".pocket-type div",
         ".penBag-type div",
         ".turtle-type div"];
-    $.each(tickDivArray,function(key,val){
+    $.each(tickDivArray, function (key, val) {
         $(val).each(function () {
             this.onclick = function () {
                 if (!this.querySelector("div img")) {
@@ -106,7 +106,7 @@ CSDWPOLO.registerEvents=function(){
     //注册点选事件，选择某一项就把选中的tick.png加上----end
 }
 //window.onload = init;
-CSDWPOLO.init=function(){
+CSDWPOLO.init = function () {
     $(".steps div").each(function (index) {
         this.onclick = function () {
             var temp = index;
@@ -223,7 +223,7 @@ CSDWPOLO.init=function(){
         CSDWPOLO.init3DView();
     }, 400)
 }
-CSDWPOLO.changeStatsOnStepsPanelPre=function (currentPanel) {
+CSDWPOLO.changeStatsOnStepsPanelPre = function (currentPanel) {
     $(".panel-content > div").eq(currentPanel - 1).css({
         display: "block",
     });
@@ -240,7 +240,7 @@ CSDWPOLO.changeStatsOnStepsPanelPre=function (currentPanel) {
         borderBottom: "2px solid rgb(6, 243, 13)",
     });
 }
-CSDWPOLO.changeStatsOnStepsPanelNext=function (currentPanel) {
+CSDWPOLO.changeStatsOnStepsPanelNext = function (currentPanel) {
     $(".panel-content > div").eq(currentPanel + 1).css({
         display: "block",
     });
@@ -257,7 +257,7 @@ CSDWPOLO.changeStatsOnStepsPanelNext=function (currentPanel) {
         borderBottom: "2px solid rgb(6, 243, 13)",
     });
 }
-CSDWPOLO.getAllCustomInfo=function () {
+CSDWPOLO.getAllCustomInfo = function () {
     var customInfo = {};
     var poloReal = document.getElementsByClassName("polo-real")[0];
     var styleType = poloReal.getAttribute("styleType");
@@ -380,7 +380,7 @@ CSDWPOLO.getAllCustomInfo=function () {
         "龟背：" + customInfo.turtleType[0] + " " + customInfo.turtleType[1] + "\n" +
         "下一步您可以自定义logo了！" + "\n");
 }
-CSDWPOLO.init3DView=function () {
+CSDWPOLO.init3DView = function () {
     var lingkou, geo, uvarr;
     //var logo = THREE.ImageUtils.loadTexture("model/logo.png");
     var logo = THREE.ImageUtils.loadTexture("./js/changeLogo/laozi1.jpg");
@@ -405,7 +405,7 @@ CSDWPOLO.init3DView=function () {
     webglRender.setClearColor(8947848);
     webglRender.shadowMapEnabled = !0;
 
-    CSDWPOLO.app.webglRender=webglRender;
+    CSDWPOLO.app.webglRender = webglRender;
 
     document.getElementById("modelContainer").appendChild(webglRender.domElement);
     //document.body.appendChild(webglRender.domElement);
@@ -430,7 +430,7 @@ CSDWPOLO.init3DView=function () {
     stats.setMode(0);
     stats.domElement.style.position = "absolute";
     stats.domElement.style.top = stats.domElement.style.right = "0px";
-    stats.domElement.style.display="none";
+    stats.domElement.style.display = "none";
     //document.body.appendChild(stats.domElement);
     //document.getElementById("modelContainer").appendChild(stats.domElement);
 
@@ -485,19 +485,19 @@ CSDWPOLO.init3DView=function () {
                 map: logo
             }), CSDWPOLO.app.logoMesh = a, geo = CSDWPOLO.app.logoMesh.geometry, uvarr = geo.faceVertexUvs[0], CSDWPOLO.app.logoMap = a.material.map)
         });
-        CSDWPOLO.app.logoMesh.visible=false;
-        a.position.set(0,15,0.8);
+        CSDWPOLO.app.logoMesh.visible = false;
+        a.position.set(0, 15, 0.8);
         modelS.add(a)
     });
     objLoader.load("./js/changeLogo/model/new/xiukou/xiukou.obj", "./js/changeLogo/model/new/xiukou/xiukou.mtl", function (a) {
         h(a);
         a.traverse(function (a) {
-            a instanceof THREE.Mesh && (a.material.side = THREE.DoubleSide,CSDWPOLO.app.xiukouMesh = a)
+            a instanceof THREE.Mesh && (a.material.side = THREE.DoubleSide, CSDWPOLO.app.xiukouMesh = a)
         });
         modelS.add(a)
     });
 
-    modelS.position.set(0,-20,0);
+    modelS.position.set(0, -20, 0);
     modelS.scale.x = 1;
     modelS.scale.y = 1.2;
     modelS.scale.z = 1;
@@ -509,7 +509,8 @@ CSDWPOLO.init3DView=function () {
         orbitControls.update(delta);
         //trackballControls.update(delta);
         //direcLight.position.copy(camera.position);
-        direcLight.position.set(camera.position.x+20,camera.position.y+10,camera.position.z);;
+        direcLight.position.set(camera.position.x + 20, camera.position.y + 10, camera.position.z);
+        ;
 
         requestAnimationFrame(render);
         webglRender.render(scene, camera);
@@ -598,7 +599,7 @@ CSDWPOLO.init3DView=function () {
     CSDWPOLO.initDIY();
 }
 //初始化更换logo中上传图片，对图片进行编辑的功能
-CSDWPOLO.initDIY=function () {
+CSDWPOLO.initDIY = function () {
     var canvas = document.getElementById("logoCanvas");
     canvas.width = 320;
     canvas.height = 300;
@@ -609,7 +610,7 @@ CSDWPOLO.initDIY=function () {
         y: 30,
         w: 186,
         h: 249
-    }
+    };
     var currentScope = TShirtScope;
 
     // diy自定义配置
@@ -622,7 +623,7 @@ CSDWPOLO.initDIY=function () {
         fillStyle: '#000000',	// 节点填充颜色
         nodeStyle: 0,			// 节点样式:1方块,0圆点
         scaleAreaSize: 4		// 节点大小
-    }
+    };
 
     // 初始化diy
     hbdiy.init({
@@ -651,8 +652,8 @@ CSDWPOLO.initDIY=function () {
     fileInput.onchange = function () {
         //这里判断一下文件长度可以确定用户是否真的选择了文件，如果点了取消则文件长度为0
         if (fileInput.files.length !== 0) {
-            var file=fileInput.files[0];
-            if(!/image\/\w+/.test(file.type)){
+            var file = fileInput.files[0];
+            if (!/image\/\w+/.test(file.type)) {
                 alert("看清楚，这个需要图片！");
                 return false;
             }
@@ -665,9 +666,9 @@ CSDWPOLO.initDIY=function () {
         }
     };
 
-    $("#uploadImg").bind("click",function(){
+    $("#uploadImg").bind("click", function () {
         fileInput.click();
-    })
+    });
 
     function getImgUrl() {
         var ImgUrl = hbdiy.download();
@@ -675,15 +676,16 @@ CSDWPOLO.initDIY=function () {
         //window.location.href=ImgUrl;
         CSDWPOLO.app.logoMap = THREE.ImageUtils.loadTexture(ImgUrl);
         CSDWPOLO.app.logoMesh.material.map = CSDWPOLO.app.logoMap;
-        setTimeout(function(){
+        setTimeout(function () {
             hbdiy.unlock();
-        },100);
+        }, 100);
 
     }
+
     document.getElementById("applyToModel").onclick = getImgUrl;
 };
 
-CSDWPOLO.preview=function () {
+CSDWPOLO.preview = function () {
     $.fancybox($("#step3").html(), {
         autoDimensions: !1,
         autoScale: !1,
@@ -713,12 +715,12 @@ CSDWPOLO.preview=function () {
             document.getElementById("modelContainer").appendChild(CSDWPOLO.app.webglRender.domElement);
         }
     });
-}
-CSDWPOLO.saveCustomInfo=function(){
-
+};
+CSDWPOLO.saveCustomInfo = function () {
+    alert("将用户的定制信息提交到当前用户的账户中!");
 }
 //此函数和main.js中的一个函数重复，此时只是暂时备用吧
-CSDWPOLO.getAllCustomInfo_sec=function () {
+CSDWPOLO.getAllCustomInfo_sec = function () {
     var customInfo = {};
     var poloReal = document.getElementsByClassName("polo-real")[0];
     var styleType = poloReal.getAttribute("styleType");
@@ -812,7 +814,7 @@ CSDWPOLO.getAllCustomInfo_sec=function () {
     }
 }
 
-CSDWPOLO.showShirtInApp=function (styleName) {
+CSDWPOLO.showShirtInApp = function (styleName) {
     function getHtmlFromStyleName(styleName) {
         var divArr = [];
         var div1 = document.createElement("div");
